@@ -69,6 +69,12 @@ dependencies {
     implementation("com.google.code.gson:gson:2.9.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0-alpha02")
     implementation("androidx.compose.runtime:runtime-livedata:1.5.2")
+    //iconos
+    implementation("androidx.core:core-ktx:1.12.0")
+
+    implementation("androidx.compose.ui:ui-tooling-preview-android:1.5.4")
+    implementation("androidx.compose.material:material-icons-extended:1.5.4")
+
     //
 
 
