@@ -4,8 +4,11 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.angelaxd.proyectosignalingo.ui.guardados.view.GuardadosScreen
 import com.angelaxd.proyectosignalingo.ui.login.view.LoginScreen
 import com.angelaxd.proyectosignalingo.ui.menuPrincipal.view.MenuPrincipalScreen
+import com.angelaxd.proyectosignalingo.ui.perfil.view.PerfilScreen
+import com.angelaxd.proyectosignalingo.ui.quienesSomos.view.QuienesSomosScreen
 
 @Composable
 fun AppNavigation(){
@@ -17,6 +20,15 @@ fun AppNavigation(){
         }
         composable(route= AppScreens.MenuPrincipalScreen.route){
             MenuPrincipalScreen(navController)
+        }
+        composable(route= AppScreens.PerfilScreen.route){
+            PerfilScreen(navController)
+        }
+        composable(route= AppScreens.QuienesSomosScreen.route){
+            QuienesSomosScreen(navController)
+        }
+        composable(route= AppScreens.GuardadosScreen.route){
+            GuardadosScreen(navController)
         }
 
     }

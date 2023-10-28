@@ -1,4 +1,4 @@
-package com.angelaxd.proyectosignalingo.ui.perfil.view
+package com.angelaxd.proyectosignalingo.ui.guardados.view
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,14 +14,14 @@ import com.angelaxd.proyectosignalingo.ui.objetos.FunTopBar
 
 @Composable
 
-fun PerfilScreen(navController: NavHostController){
-    funScaffoldPerfil(navController)
+fun GuardadosScreen(navController: NavHostController){
+    funScaffoldGuardados(navController)
 }
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun funScaffoldPerfil(navController: NavHostController){
+fun funScaffoldGuardados(navController: NavHostController){
     Scaffold (
         topBar = { FunTopBar(navController, "Menú Principal") },
         bottomBar = { FunBottomBar(navController) }

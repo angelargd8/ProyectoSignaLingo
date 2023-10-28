@@ -45,7 +45,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.angelaxd.proyectosignalingo.navigation.AppScreens
-import com.angelaxd.proyectosignalingo.ui.objetos.Imagen
+import com.angelaxd.proyectosignalingo.ui.objetos.ImagenLogin
 
 @Composable
 fun LoginScreen(navController: NavHostController) {
@@ -82,7 +82,7 @@ fun BoxFun(navController: NavHostController){
 
 
     ) {
-            Imagen("https://i.imgur.com/wbqhain.png")
+            ImagenLogin("https://i.imgur.com/wbqhain.png")
             //Spacer(modifier = Modifier.height(1.dp))
             //FunButton(navController)
             //Column(modifier = Modifier.padding(top = 420.dp, bottom = 100.dp,start=120.dp)) {
@@ -118,20 +118,20 @@ fun BoxFun(navController: NavHostController){
 
 
                 //botones
-                Column(modifier = Modifier.padding(start=120.dp)) {
+                Column(modifier = Modifier.padding(start=100.dp)) {
                     //--botones para iniciar sesion y crear cuenta
                     Button( onClick =  { navController.navigate(route= AppScreens.MenuPrincipalScreen.route) },
                         modifier= Modifier
-                            .width(170.dp)
-                            .height(55.dp)
+                            .width(200.dp)
+                            .height(45.dp)
                     ) {
                         Text(text = "Ingresar sesión")
                     }
-                    Spacer(modifier = Modifier.height(2.dp))
+                    Spacer(modifier = Modifier.height(4.dp))
                     Button( onClick =  { navController.navigate(route= AppScreens.MenuPrincipalScreen.route) },
                         modifier= Modifier
-                            .width(170.dp)
-                            .height(55.dp)
+                            .width(200.dp)
+                            .height(45.dp)
                     ) {
                         Text(text = "Crear Cuenta")
                     }
