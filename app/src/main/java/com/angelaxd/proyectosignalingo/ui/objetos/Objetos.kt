@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
@@ -31,9 +32,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ComposableTarget
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.focusModifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
@@ -109,5 +115,46 @@ fun FunBottomBar(navController: NavController){
             Icon(Icons.Filled.Info, contentDescription = "Info", modifier= Modifier.size(48.dp))
         }
     }
+
+}
+
+
+@Composable
+fun Texto(texto: String){
+
+    Text(
+        text = texto,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(5.dp),
+        //modifier = Modifier.padding()
+        //modifier = Modifier.wrapContentHeight(),
+        fontSize = 22.sp,
+        color = Color(0xFF6200EE),
+        fontWeight= FontWeight.Bold, //grosor del texto
+        fontStyle = FontStyle.Normal, //estilo (normal, cursiva..)
+        lineHeight = 10.sp, //altura de linea del texto
+        overflow = TextOverflow.Ellipsis //como se maneja el desbordamiento
+    )
+
+}
+
+@Composable
+fun Texto2(texto: String){
+
+    Text(
+        text = texto,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(10.dp),
+        //modifier = Modifier.padding()
+        //modifier = Modifier.wrapContentHeight(),
+        fontSize = 18.sp,
+        color = Color(0xFF6200EE),
+        fontWeight= FontWeight.Normal, //grosor del texto
+        fontStyle = FontStyle.Normal, //estilo (normal, cursiva..)
+        lineHeight = 20.sp, //altura de linea del texto
+        overflow = TextOverflow.Ellipsis //como se maneja el desbordamiento
+    )
 
 }

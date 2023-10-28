@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.angelaxd.proyectosignalingo.navigation.AppScreens
+import com.angelaxd.proyectosignalingo.ui.buscarSeña.view.BuscarSenaScreen
 import com.angelaxd.proyectosignalingo.ui.objetos.FunBottomBar
 import com.angelaxd.proyectosignalingo.ui.objetos.FunTopBar
 import com.angelaxd.proyectosignalingo.ui.objetos.Imagen
@@ -63,7 +64,7 @@ fun Botones(navController: NavHostController){
     Column(modifier = Modifier.padding(start=80.dp)) {
 
         Spacer(modifier = Modifier.height(45.dp))
-        Button( onClick =  { navController.navigate(route= AppScreens.MenuPrincipalScreen.route) },
+        Button( onClick =  { navController.navigate(route= AppScreens.EmpiezaAprenderScreen.route) },
             modifier= Modifier
                 .width(240.dp)
                 .height(50.dp)
@@ -73,7 +74,7 @@ fun Botones(navController: NavHostController){
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button( onClick =  { navController.navigate(route= AppScreens.MenuPrincipalScreen.route) },
+        Button( onClick =  { navController.navigate(route= AppScreens.BuscarSenaScreen.route) },
             modifier= Modifier
                 .width(240.dp)
                 .height(50.dp)
@@ -83,7 +84,7 @@ fun Botones(navController: NavHostController){
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button( onClick =  { navController.navigate(route= AppScreens.MenuPrincipalScreen.route) },
+        Button( onClick =  { navController.navigate(route= AppScreens.HacerRecomendacionScreen.route) },
             modifier= Modifier
                 .width(240.dp)
                 .height(50.dp)

@@ -23,7 +23,7 @@ fun GuardadosScreen(navController: NavHostController){
 @Composable
 fun funScaffoldGuardados(navController: NavHostController){
     Scaffold (
-        topBar = { FunTopBar(navController, "Menú Principal") },
+        topBar = { FunTopBar(navController, "Guardados") },
         bottomBar = { FunBottomBar(navController) }
 
     ){ innerPadding ->

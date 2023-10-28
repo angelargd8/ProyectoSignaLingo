@@ -111,6 +111,20 @@ fun BoxFun(navController: NavHostController){
                             passwordVisibleChange= {passwordVisible=!passwordVisible},
                             isValidPassword = isValidPassword
                         )
+
+                        Column(modifier = Modifier.padding(start=50.dp)) {
+                            Button( onClick =  { navController.navigate(route= AppScreens.MenuPrincipalScreen.route) },
+                                modifier= Modifier
+                                    .width(200.dp)
+                                    .height(45.dp)
+                            ) {
+                                Text(text = "Ingresar sesión")
+                            }
+                            Spacer(modifier = Modifier.height(20.dp))
+                        }
+
+
+
                     }
                 }
                 Spacer(modifier = Modifier.height(20.dp))
@@ -120,13 +134,7 @@ fun BoxFun(navController: NavHostController){
                 //botones
                 Column(modifier = Modifier.padding(start=100.dp)) {
                     //--botones para iniciar sesion y crear cuenta
-                    Button( onClick =  { navController.navigate(route= AppScreens.MenuPrincipalScreen.route) },
-                        modifier= Modifier
-                            .width(200.dp)
-                            .height(45.dp)
-                    ) {
-                        Text(text = "Ingresar sesión")
-                    }
+
                     Spacer(modifier = Modifier.height(4.dp))
                     Button( onClick =  { navController.navigate(route= AppScreens.MenuPrincipalScreen.route) },
                         modifier= Modifier
