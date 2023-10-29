@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.angelaxd.proyectosignalingo.R
 import com.angelaxd.proyectosignalingo.ui.buscarSeña.view.funScaffoldBuscar
 import com.angelaxd.proyectosignalingo.ui.guardados.view.Images
 import com.angelaxd.proyectosignalingo.ui.objetos.FunBottomBar
@@ -37,7 +38,38 @@ fun ContenidoScreen(navController: NavHostController){
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun funScaffoldContenido(navController: NavHostController){
-    var data = mutableStateListOf<Strings>()
+    val data = listOf(
+        "correr",
+        "saltar",
+        "nadar",
+        "bailar",
+        "cantar",
+        "estudiar",
+        "aprender",
+        "enseñar",
+        "escribir",
+        "leer",
+        "cocinar",
+        "comer",
+        "beber",
+        "dormir",
+        "despertar",
+        "trabajar",
+        "jugar",
+        "pensar",
+        "hablar",
+        "escuchar",
+        "observar",
+        "viajar",
+        "caminar",
+        "comprar",
+        "vender",
+        "conducir",
+        "volar",
+        "navegar",
+        "construir"
+    )
+
     Scaffold (
         topBar = { FunTopBar(navController, "Verbos") },
         bottomBar = { FunBottomBar(navController) }
@@ -46,8 +78,7 @@ fun funScaffoldContenido(navController: NavHostController){
         LazyColumn(modifier = Modifier.padding(innerPadding)) {
 
             items(data) { d ->
-
-                //ListItemRow(d)
+                ListItemRow(d)
             }
 
         }
@@ -56,10 +87,10 @@ fun funScaffoldContenido(navController: NavHostController){
 }
 
 @Composable
-fun ListItemRow(item: String, modifier: Modifier = Modifier) {
+fun ListItemRow(item: String) {
 
     Row(
-        modifier = modifier
+        modifier = Modifier
             .fillMaxWidth()
             .height(48.dp)
             .padding(horizontal = 16.dp, vertical = 8.dp),
@@ -69,7 +100,7 @@ fun ListItemRow(item: String, modifier: Modifier = Modifier) {
             .size(20.dp)
             .padding(5.dp),
     ) {
-        //Icon(painter = painterResource(id = R.drawable.ic_favorito), contentDescription = "")
+        Icon(painter = painterResource(id = R.drawable.ic_icono), contentDescription = "")
     }
         Text(text = item)
     }

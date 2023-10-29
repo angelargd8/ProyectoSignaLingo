@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
@@ -32,23 +34,18 @@ fun EmpiezaprenderScreen(navController: NavHostController){
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun funScaffoldEmpiezaprenderScreen(navController: NavHostController){
-    var categorias = listOf("Verbos", "Adjetivos", "Personas", "Alimentos", "Calendarios", "")
+    // variable temporal para ense;ar informacion
+    var categorias = listOf("Verbos", "Adjetivos", "Personas", "Alimentos", "Calendarios", "Lugares", "Animales")
+
     Scaffold (
         topBar = { FunTopBar(navController, "Empieza prender") },
         bottomBar = { FunBottomBar(navController) }
 
     ){ innerPadding ->
-        Box(modifier = Modifier.padding(innerPadding)) {
+        LazyColumn(modifier = Modifier.padding(innerPadding)) {
 
-            Column(Modifier.verticalScroll(rememberScrollState())){
-
-                Botones(navController , "Verbos", AppScreens.EmpiezaAprenderScreen.route)
-                Botones(navController , "Adjetivos", AppScreens.EmpiezaAprenderScreen.route)
-                Botones(navController , "Personas", AppScreens.EmpiezaAprenderScreen.route)
-                Botones(navController , "Alimentos", AppScreens.EmpiezaAprenderScreen.route)
-                Botones(navController , "Calendarios", AppScreens.EmpiezaAprenderScreen.route)
-                Botones(navController , "Lugares", AppScreens.EmpiezaAprenderScreen.route)
-                Botones(navController , "Animales", AppScreens.EmpiezaAprenderScreen.route)
+        items(categorias){item ->
+                Botones(navController , item, AppScreens.ContenidoScreen.route)
 
             }
 
