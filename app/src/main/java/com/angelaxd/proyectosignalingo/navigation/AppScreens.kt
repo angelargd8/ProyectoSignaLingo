@@ -13,6 +13,7 @@ sealed class AppScreens(val route: String){
     object GuardadosScreen: AppScreens("Guardados")
     object EmpiezaAprenderScreen: AppScreens("EmpiezaAprender")
     object HacerRecomendacionScreen: AppScreens("HacerRecomendacion")
+    object ContenidoScreen: AppScreens("Contenido")
 
 
 }

@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.angelaxd.proyectosignalingo.ui.Contenido.ContenidoScreen
 import com.angelaxd.proyectosignalingo.ui.buscarSeña.view.BuscarSenaScreen
 import com.angelaxd.proyectosignalingo.ui.empiezaAprender.view.EmpiezaprenderScreen
 import com.angelaxd.proyectosignalingo.ui.guardados.view.GuardadosScreen
@@ -41,6 +42,9 @@ fun AppNavigation(){
         }
         composable(route= AppScreens.HacerRecomendacionScreen.route){
             HacerRecomendacionScreen(navController)
+        }
+        composable(route= AppScreens.ContenidoScreen.route){
+            ContenidoScreen(navController)
         }
 
     }
