@@ -2,6 +2,7 @@ package com.angelaxd.proyectosignalingo.ui.Contenido.view
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -56,14 +57,20 @@ fun funScaffoldContenido(navController: NavHostController){
 
     ){
 
-        Spacer(modifier = Modifier.height(50.dp))
+        //
         Box(
             Modifier
                 .fillMaxSize()
                 .semantics { isTraversalGroup = true }){
-            LazyColumn() {
-                 items(data) { d -> ListItemRow(d, navController)}
+            Column {
+                Spacer(modifier = Modifier.height(70.dp))
+                LazyColumn() {
+                    items(data) { d -> ListItemRow(d, navController)}
+                }
+
             }
+
+
 
         }
     }

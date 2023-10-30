@@ -74,6 +74,7 @@ dependencies {
 
     implementation("androidx.compose.ui:ui-tooling-preview-android:1.5.4")
     implementation("androidx.compose.material:material-icons-extended:1.5.4")
+    implementation("androidx.leanback:leanback:1.0.0")
 
     //
 

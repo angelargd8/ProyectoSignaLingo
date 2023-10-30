@@ -1,6 +1,7 @@
 package com.angelaxd.proyectosignalingo.ui.buscarSeña.view
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -22,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.traversalIndex
 import androidx.compose.ui.unit.dp
+import androidx.leanback.widget.SearchBar
 import androidx.navigation.NavHostController
 import com.angelaxd.proyectosignalingo.ui.Contenido.view.ListItemRow
 import com.angelaxd.proyectosignalingo.ui.Contenido.viewmodel.data
@@ -47,27 +49,31 @@ fun funScaffoldBuscar(navController: NavHostController){
 
     ){ innerPadding ->
         Box(modifier = Modifier.padding(innerPadding)) {
+            Column( modifier = Modifier
+                .align(Alignment.TopCenter)){
+                SearchBar(
+                    modifier = Modifier
+                        //.align(Alignment.TopCenter)
+                        .semantics { traversalIndex = -1f },
+                    query = query,
+                    onQueryChange    = {query = it},
+                    onSearch = {active = false},
+                    active = active,
+                    onActiveChange = {active = it},
+                    leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
+                ) {
 
-            SearchBar(
-                modifier = Modifier
-                    .align(Alignment.TopCenter)
-                    .semantics { traversalIndex = -1f },
-                query = query,
-                onQueryChange    = {query = it},
-                onSearch = {active = false},
-                active = active,
-                onActiveChange = {active = it},
-                leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
-            ) {
-
-            }
-            Spacer(modifier = Modifier.height(50.dp))
-            LazyColumn(){
-                val filteredContent = data.filter { it.contains(query, true) }
-                items(filteredContent) { dato ->
-                    ListItemRow(dato)
                 }
+                Spacer(modifier = Modifier.height(5.dp))
+                LazyColumn(){
+                    val filteredContent = data.filter { it.contains(query, true) }
+                    items(filteredContent) { dato ->
+                        ListItemRow(dato,navController)
+                    }
+                }
+
             }
+
 
         }
     }
