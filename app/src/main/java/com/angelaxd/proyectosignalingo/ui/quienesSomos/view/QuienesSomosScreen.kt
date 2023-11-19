@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
@@ -39,7 +40,7 @@ fun funScaffoldQuienesSomos(navController: NavHostController, context: Context){
     ){ innerPadding ->
         Box(modifier = Modifier.padding(innerPadding)) {
 
-            Column {
+            Column(modifier = Modifier.fillMaxHeight()) {
                 Spacer(modifier = Modifier.height(60.dp))
                 FunCard(context)
             }
@@ -60,6 +61,7 @@ fun FunCard(context: Context) {
             //.background(Color(0xFF6650a4))
 
     ) {
+        Spacer(modifier = Modifier.height(30.dp))
         Texto(context.getString(R.string.Quienes))
         Texto2(context.getString(R.string.QuienesSomos))
         Spacer(modifier = Modifier.height(25.dp))

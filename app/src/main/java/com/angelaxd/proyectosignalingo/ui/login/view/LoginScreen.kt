@@ -21,6 +21,7 @@ import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -96,7 +97,11 @@ fun BoxFun(navController: NavHostController, viewModelLogin: loginScreenViewmode
             Column (modifier = Modifier.padding(top = 390.dp, bottom = 100.dp)){
                 Row(){
                     Spacer(modifier = Modifier.width(50.dp))
-                    Card (shape = RoundedCornerShape(10.dp), modifier = Modifier.wrapContentHeight()){
+                    Card (shape = RoundedCornerShape(10.dp), modifier = Modifier.wrapContentHeight(),
+                        colors = CardDefaults.cardColors(
+                            Color(0x88BFB1E7)
+                        )
+                    ){
                         //entrys para poner la informacion
                         FunEmail(email = email,
                             emailChange = {
