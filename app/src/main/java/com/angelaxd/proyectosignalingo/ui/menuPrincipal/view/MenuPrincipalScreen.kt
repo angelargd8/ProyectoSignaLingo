@@ -23,7 +23,7 @@ import com.angelaxd.proyectosignalingo.ui.objetos.FunTopBar
 import com.angelaxd.proyectosignalingo.ui.objetos.Imagen
 
 @Composable
-fun MenuPrincipalScreen(navController: NavHostController, email: String){
+fun MenuPrincipalScreen(navController: NavHostController){
 
     funScaffoldMenuPrincipal(navController)
 
@@ -46,6 +46,7 @@ fun funScaffoldMenuPrincipal(navController: NavHostController){
 
         }
     }
+
 
 }
 

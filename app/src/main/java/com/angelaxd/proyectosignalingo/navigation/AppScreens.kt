@@ -3,15 +3,13 @@ package com.angelaxd.proyectosignalingo.navigation
 sealed class AppScreens(val route: String){
     object LoginScreen: AppScreens("login")
 
+    object SplashScreen: AppScreens("SplashScreen")
+
     object BuscarSenaScreen: AppScreens("BuscarSena")
 
-    object MenuPrincipalScreen: AppScreens("MenuPrincipal/{email}"){
-        fun createRoute(email: String) = "MenuPrincipal/$email"
-    }
+    object MenuPrincipalScreen: AppScreens("MenuPrincipal")
 
-    object PerfilScreen: AppScreens("Perfil/{email}"){
-        fun createRoute(email: String) = "Perfil/$email"
-    }
+    object PerfilScreen: AppScreens("Perfil")
 
     object QuienesSomosScreen: AppScreens("QuienesSomos")
     object GuardadosScreen: AppScreens("Guardados")

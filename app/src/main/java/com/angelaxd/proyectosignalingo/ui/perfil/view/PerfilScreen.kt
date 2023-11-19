@@ -1,21 +1,27 @@
 package com.angelaxd.proyectosignalingo.ui.perfil.view
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.angelaxd.proyectosignalingo.navigation.AppScreens
 import com.angelaxd.proyectosignalingo.ui.objetos.FunBottomBar
 import com.angelaxd.proyectosignalingo.ui.objetos.FunTopBar
 import com.angelaxd.proyectosignalingo.ui.objetos.Imagen
@@ -24,14 +30,14 @@ import com.angelaxd.proyectosignalingo.ui.objetos.Texto2
 
 @Composable
 
-fun PerfilScreen(navController: NavHostController, email: String){
-    funScaffoldPerfil(navController, email)
+fun PerfilScreen(navController: NavHostController){
+    funScaffoldPerfil(navController)
 }
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun funScaffoldPerfil(navController: NavHostController, email: String){
+fun funScaffoldPerfil(navController: NavHostController){
     Scaffold (
         topBar = { FunTopBar(navController, "Perfil") },
         bottomBar = { FunBottomBar(navController) }
@@ -40,7 +46,7 @@ fun funScaffoldPerfil(navController: NavHostController, email: String){
         Box(modifier = Modifier.padding(innerPadding)) {
 
             Column {
-                BoxFun(email)
+                BoxFun(navController)
                 //Text("Hola mundo!", )
             }
 
@@ -50,7 +56,7 @@ fun funScaffoldPerfil(navController: NavHostController, email: String){
 }
 
 @Composable
-fun BoxFun(email: String) {
+fun BoxFun(navController: NavHostController) {
     Box(modifier= Modifier
         .fillMaxWidth()
         .background(Color(0xC1D0B9F0))
@@ -66,13 +72,17 @@ fun BoxFun(email: String) {
             Text(text = "User Oyente123")
         }
     }
-    FunCard(email)
+    FunCard(navController)
 
 }
 
 @Composable
-fun FunCard(email: String){
-    Column {
+fun FunCard(navController: NavHostController){
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Spacer(modifier = Modifier.height(5.dp))
         Card {
             Texto("Nombre:")
             Texto2("Phil Mongomery")
@@ -80,7 +90,20 @@ fun FunCard(email: String){
         Spacer(modifier = Modifier.height(5.dp))
         Card {
             Texto("E-mail:")
-            Texto2(email)
+            Texto2("email")
+        }
+        Spacer(modifier = Modifier.height(15.dp))
+        Button( onClick =  {
+
+            navController.navigate(route= AppScreens.LoginScreen.route)
+
+        },
+            modifier= Modifier
+                .width(200.dp)
+                .height(45.dp),
+            colors= ButtonDefaults.buttonColors(containerColor = Color(0xFF6650a4), contentColor = Color.White)
+        ) {
+            Text(text = "Cerrar Sesion")
         }
     }
 }

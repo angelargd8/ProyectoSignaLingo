@@ -22,31 +22,25 @@ import com.angelaxd.proyectosignalingo.ui.singin.view.SignInScreen
 @Composable
 fun AppNavigation() {
 
-
     val navController= rememberNavController();
 
 
-    NavHost(navController = navController, startDestination = AppScreens.LoginScreen.route ){
+    NavHost(navController = navController, startDestination = AppScreens.SplashScreen.route ){
+
+        composable(route = AppScreens.SplashScreen.route){
+            SplashScreen(navController)
+        }
+
         composable(route = AppScreens.LoginScreen.route){
             LoginScreen(navController)
         }
 
-        composable(route= AppScreens.MenuPrincipalScreen.route,
-            arguments = listOf(navArgument(name= "email"){
-            type= NavType.StringType
-        })){backStackEntry->
-            val arguments = requireNotNull(backStackEntry.arguments)
-            val email= arguments.getString("email") ?:""
-            MenuPrincipalScreen(navController, email)
+        composable(route= AppScreens.MenuPrincipalScreen.route){
+            MenuPrincipalScreen(navController)
         }
 
-        composable(route= AppScreens.PerfilScreen.route,
-            arguments = listOf(navArgument(name= "email"){
-                type= NavType.StringType
-            })){backStackEntry->
-            val arguments = requireNotNull(backStackEntry.arguments)
-            val email= arguments.getString("email") ?:""
-            PerfilScreen(navController,email)
+        composable(route= AppScreens.PerfilScreen.route){
+            PerfilScreen(navController)
         }
         composable(route= AppScreens.QuienesSomosScreen.route){
             QuienesSomosScreen(navController)

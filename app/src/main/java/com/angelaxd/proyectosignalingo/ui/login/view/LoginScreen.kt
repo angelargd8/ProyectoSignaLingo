@@ -120,9 +120,7 @@ fun BoxFun(navController: NavHostController, viewModelLogin: loginScreenViewmode
                             Button( onClick =  {
 
                                 viewModelLogin.SignInWithEmailAndPassword(email, contrasena){
-                                    navController.navigate(route= AppScreens.MenuPrincipalScreen.createRoute(email)){
-                                        launchSingleTop = true
-                                    }
+                                    navController.navigate(route= AppScreens.MenuPrincipalScreen.route)
                                 }
 
 
