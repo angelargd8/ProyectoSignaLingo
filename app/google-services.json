@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "506601784443",
+    "project_id": "signalingo",
+    "storage_bucket": "signalingo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506601784443:android:ac2371cbd45d79afa34ede",
+        "android_client_info": {
+          "package_name": "com.angelaxd.proyectosignalingo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506601784443-mjdm1t632htfrididjg659vsg4r0t368.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.angelaxd.proyectosignalingo",
+            "certificate_hash": "6ae433e358678ec9c084db95b68873a88a35f760"
+          }
+        },
+        {
+          "client_id": "506601784443-km94814200uul5ktq1baa64tn7gcbtv1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCecjcmC8EKQOoDatIYs3bVrBXCwhyXL8g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "506601784443-km94814200uul5ktq1baa64tn7gcbtv1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

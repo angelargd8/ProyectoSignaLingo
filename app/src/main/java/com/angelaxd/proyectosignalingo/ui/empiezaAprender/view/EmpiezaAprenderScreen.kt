@@ -12,12 +12,14 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.angelaxd.proyectosignalingo.navigation.AppScreens
@@ -38,7 +40,7 @@ fun funScaffoldEmpiezaprenderScreen(navController: NavHostController){
     var categorias = listOf("Verbos", "Adjetivos", "Personas", "Alimentos", "Calendarios", "Lugares", "Animales")
 
     Scaffold (
-        topBar = { FunTopBar(navController, "Empieza prender") },
+        topBar = { FunTopBar(navController, "Empieza Aprender") },
         bottomBar = { FunBottomBar(navController) }
 
     ){ innerPadding ->
@@ -61,7 +63,8 @@ fun Botones(navController: NavHostController, s:String, route: String){
         Button( onClick =  { navController.navigate(route= route.toString()) },
             modifier= Modifier
                 .width(240.dp)
-                .height(50.dp)
+                .height(50.dp),
+            colors= ButtonDefaults.buttonColors(containerColor = Color(0xFF6650a4), contentColor = Color.White)
         ) {
             Text(text = s)
         }

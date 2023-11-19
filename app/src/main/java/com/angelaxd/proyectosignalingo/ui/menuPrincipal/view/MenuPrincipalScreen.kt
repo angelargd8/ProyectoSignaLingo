@@ -7,26 +7,23 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.angelaxd.proyectosignalingo.navigation.AppScreens
-import com.angelaxd.proyectosignalingo.ui.buscarSeña.view.BuscarSenaScreen
 import com.angelaxd.proyectosignalingo.ui.objetos.FunBottomBar
 import com.angelaxd.proyectosignalingo.ui.objetos.FunTopBar
 import com.angelaxd.proyectosignalingo.ui.objetos.Imagen
 
 @Composable
-fun MenuPrincipalScreen(navController: NavHostController){
+fun MenuPrincipalScreen(navController: NavHostController, email: String){
 
     funScaffoldMenuPrincipal(navController)
 
@@ -67,7 +64,8 @@ fun Botones(navController: NavHostController){
         Button( onClick =  { navController.navigate(route= AppScreens.EmpiezaAprenderScreen.route) },
             modifier= Modifier
                 .width(240.dp)
-                .height(50.dp)
+                .height(50.dp),
+            colors= ButtonDefaults.buttonColors(containerColor = Color(0xFF6650a4), contentColor = Color.White)
         ) {
             Text(text = "Empieza a aprender")
         }
@@ -77,7 +75,8 @@ fun Botones(navController: NavHostController){
         Button( onClick =  { navController.navigate(route= AppScreens.BuscarSenaScreen.route) },
             modifier= Modifier
                 .width(240.dp)
-                .height(50.dp)
+                .height(50.dp),
+            colors= ButtonDefaults.buttonColors(containerColor = Color(0xFF6650a4), contentColor = Color.White)
         ) {
             Text(text = "Buscar seña")
         }
@@ -87,7 +86,8 @@ fun Botones(navController: NavHostController){
         Button( onClick =  { navController.navigate(route= AppScreens.HacerRecomendacionScreen.route) },
             modifier= Modifier
                 .width(240.dp)
-                .height(50.dp)
+                .height(50.dp),
+            colors= ButtonDefaults.buttonColors(containerColor = Color(0xFF6650a4), contentColor = Color.White)
         ) {
             Text(text = "Hacer recomendación")
         }

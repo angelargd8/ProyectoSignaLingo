@@ -24,14 +24,14 @@ import com.angelaxd.proyectosignalingo.ui.objetos.Texto2
 
 @Composable
 
-fun PerfilScreen(navController: NavHostController){
-    funScaffoldPerfil(navController)
+fun PerfilScreen(navController: NavHostController, email: String){
+    funScaffoldPerfil(navController, email)
 }
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun funScaffoldPerfil(navController: NavHostController){
+fun funScaffoldPerfil(navController: NavHostController, email: String){
     Scaffold (
         topBar = { FunTopBar(navController, "Perfil") },
         bottomBar = { FunBottomBar(navController) }
@@ -40,7 +40,7 @@ fun funScaffoldPerfil(navController: NavHostController){
         Box(modifier = Modifier.padding(innerPadding)) {
 
             Column {
-                BoxFun()
+                BoxFun(email)
                 //Text("Hola mundo!", )
             }
 
@@ -50,7 +50,7 @@ fun funScaffoldPerfil(navController: NavHostController){
 }
 
 @Composable
-fun BoxFun(){
+fun BoxFun(email: String) {
     Box(modifier= Modifier
         .fillMaxWidth()
         .background(Color(0xC1D0B9F0))
@@ -66,21 +66,21 @@ fun BoxFun(){
             Text(text = "User Oyente123")
         }
     }
-    FunCard()
+    FunCard(email)
 
 }
 
 @Composable
-fun FunCard(){
+fun FunCard(email: String){
     Column {
         Card {
             Texto("Nombre:")
-            Texto2("Phil Montgomery")
+            Texto2("Phil Mongomery")
         }
         Spacer(modifier = Modifier.height(5.dp))
         Card {
             Texto("E-mail:")
-            Texto2("hello@philmontgomery.co")
+            Texto2(email)
         }
     }
 }
