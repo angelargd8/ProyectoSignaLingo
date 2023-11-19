@@ -2,7 +2,6 @@ package com.angelaxd.proyectosignalingo.ui.objetos
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -115,12 +114,13 @@ fun Texto(texto: String){
     Text(
         text = texto,
         modifier = Modifier
-            .fillMaxWidth()
+            //.fillMaxWidth()
             .padding(5.dp),
         //modifier = Modifier.padding()
         //modifier = Modifier.wrapContentHeight(),
         fontSize = 22.sp,
-        color = Color(0xFF6200EE),
+        //color = Color(0xFF6200EE),
+        color = Color.White,
         fontWeight= FontWeight.Bold, //grosor del texto
         fontStyle = FontStyle.Normal, //estilo (normal, cursiva..)
         lineHeight = 10.sp, //altura de linea del texto
@@ -135,12 +135,13 @@ fun Texto2(texto: String){
     Text(
         text = texto,
         modifier = Modifier
-            .fillMaxWidth()
+            //.fillMaxWidth()
             .padding(10.dp),
         //modifier = Modifier.padding()
         //modifier = Modifier.wrapContentHeight(),
         fontSize = 18.sp,
-        color = Color(0xFF6200EE),
+        //color = Color(0xFF6200EE),
+        color = Color.White,
         fontWeight= FontWeight.Normal, //grosor del texto
         fontStyle = FontStyle.Normal, //estilo (normal, cursiva..)
         lineHeight = 20.sp, //altura de linea del texto

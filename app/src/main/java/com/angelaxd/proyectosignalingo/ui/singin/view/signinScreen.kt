@@ -29,6 +29,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
+import com.angelaxd.proyectosignalingo.R
 import com.angelaxd.proyectosignalingo.navigation.AppScreens
 import com.angelaxd.proyectosignalingo.ui.login.view.FunEmail
 import com.angelaxd.proyectosignalingo.ui.login.view.FunPassword
@@ -113,7 +114,7 @@ fun BoxFun2(navController: NavHostController, viewModelLogin: loginScreenViewmod
                                 .height(45.dp),
                             colors= ButtonDefaults.buttonColors(containerColor = Color(0xFF6650a4), contentColor = Color.White)
                         ) {
-                            Text(text = "Registrarse")
+                            Text(text = context.getString(R.string.Registrarse))
                         }
                         Spacer(modifier = Modifier.height(20.dp))
                     }
@@ -143,7 +144,7 @@ fun BoxFun2(navController: NavHostController, viewModelLogin: loginScreenViewmod
                         .height(45.dp),
                     colors= ButtonDefaults.buttonColors(containerColor = Color(0xFF6650a4), contentColor = Color.White)
                 ) {
-                    Text(text = "Ya tengo una cuenta")
+                    Text(text = context.getString(R.string.YaTengoUnaCuenta))
                 }
 
 

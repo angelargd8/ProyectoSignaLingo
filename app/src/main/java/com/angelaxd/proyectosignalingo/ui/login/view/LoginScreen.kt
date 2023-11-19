@@ -43,6 +43,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
+import com.angelaxd.proyectosignalingo.R
 import com.angelaxd.proyectosignalingo.navigation.AppScreens
 import com.angelaxd.proyectosignalingo.ui.login.viewModel.loginScreenViewmodel
 import com.angelaxd.proyectosignalingo.ui.objetos.ImagenLogin
@@ -133,7 +134,7 @@ fun BoxFun(navController: NavHostController, viewModelLogin: loginScreenViewmode
                                     .height(45.dp),
                                 colors= ButtonDefaults.buttonColors(containerColor = Color(0xFF6650a4), contentColor = Color.White)
                             ) {
-                                Text(text = "Ingresar sesión")
+                                Text(text = context.getString(R.string.IniciarSesion))
                             }
                             Spacer(modifier = Modifier.height(20.dp))
                         }
@@ -163,7 +164,7 @@ fun BoxFun(navController: NavHostController, viewModelLogin: loginScreenViewmode
                             .height(45.dp),
                         colors= ButtonDefaults.buttonColors(containerColor = Color(0xFF6650a4), contentColor = Color.White)
                     ) {
-                        Text(text = "Crear Cuenta")
+                        Text(text = context.getString(R.string.CrearCuenta))
                     }
 
 

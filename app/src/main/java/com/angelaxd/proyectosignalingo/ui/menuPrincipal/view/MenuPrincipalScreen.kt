@@ -1,5 +1,6 @@
 package com.angelaxd.proyectosignalingo.ui.menuPrincipal.view
 
+import android.content.Context
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -15,8 +16,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.angelaxd.proyectosignalingo.R
 import com.angelaxd.proyectosignalingo.navigation.AppScreens
 import com.angelaxd.proyectosignalingo.ui.objetos.FunBottomBar
 import com.angelaxd.proyectosignalingo.ui.objetos.FunTopBar
@@ -24,16 +27,16 @@ import com.angelaxd.proyectosignalingo.ui.objetos.Imagen
 
 @Composable
 fun MenuPrincipalScreen(navController: NavHostController){
-
-    funScaffoldMenuPrincipal(navController)
+    val context = LocalContext.current
+    funScaffoldMenuPrincipal(navController, context)
 
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun funScaffoldMenuPrincipal(navController: NavHostController){
+fun funScaffoldMenuPrincipal(navController: NavHostController, context: Context){
     Scaffold (
-        topBar = { FunTopBar(navController, "Menú Principal")},
+        topBar = { FunTopBar(navController, context.getString(R.string.MenuPrincipal))},
         bottomBar = {FunBottomBar(navController)}
 
     ){ innerPadding ->
@@ -41,7 +44,7 @@ fun funScaffoldMenuPrincipal(navController: NavHostController){
 
             Column {
                 RowImagen()
-                Botones(navController)
+                Botones(navController, context)
             }
 
         }
@@ -58,7 +61,7 @@ fun RowImagen(){
     }
 }
 @Composable
-fun Botones(navController: NavHostController){
+fun Botones(navController: NavHostController, context: Context){
     Column(modifier = Modifier.padding(start=80.dp)) {
 
         Spacer(modifier = Modifier.height(45.dp))
@@ -68,7 +71,7 @@ fun Botones(navController: NavHostController){
                 .height(50.dp),
             colors= ButtonDefaults.buttonColors(containerColor = Color(0xFF6650a4), contentColor = Color.White)
         ) {
-            Text(text = "Empieza a aprender")
+            Text(text = context.getString(R.string.Empieza))
         }
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -79,7 +82,7 @@ fun Botones(navController: NavHostController){
                 .height(50.dp),
             colors= ButtonDefaults.buttonColors(containerColor = Color(0xFF6650a4), contentColor = Color.White)
         ) {
-            Text(text = "Buscar seña")
+            Text(text = context.getString(R.string.Buscar))
         }
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -90,7 +93,7 @@ fun Botones(navController: NavHostController){
                 .height(50.dp),
             colors= ButtonDefaults.buttonColors(containerColor = Color(0xFF6650a4), contentColor = Color.White)
         ) {
-            Text(text = "Hacer recomendación")
+            Text(text = context.getString(R.string.HacerRecomendacion))
         }
     }
 

@@ -1,25 +1,22 @@
 package com.angelaxd.proyectosignalingo.ui.guardados.view
 
 import android.annotation.SuppressLint
-import androidx.compose.foundation.lazy.items
-import android.media.Image
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
@@ -34,7 +31,8 @@ import com.angelaxd.proyectosignalingo.ui.objetos.FunTopBar
 
 @Composable
 fun GuardadosScreen(navController: NavHostController){
-    funScaffoldGuardados(navController)
+    val context = LocalContext.current
+    funScaffoldGuardados(navController, context)
 }
 
 data class Images(var img: Int, var txt1 : String)
@@ -44,20 +42,20 @@ data class Images(var img: Int, var txt1 : String)
 @SuppressLint("UnrememberedMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun funScaffoldGuardados(navController: NavHostController){
+fun funScaffoldGuardados(navController: NavHostController, context: Context){
     var saves =
         listOf(
-            listOf(Images(R.drawable.ic_comunicarimg, "Comunicar"),Images(R.drawable.ic_enseniarimg, "Enseñar") ) ,
-            listOf(Images(R.drawable.ic_comerimg, "Comer"),Images(R.drawable.ic_saludarimg, "Saludar") )
-            ,listOf(Images(R.drawable.ic_comunicarimg, "Comunicar"),Images(R.drawable.ic_enseniarimg, "Enseñar") ) ,
-            listOf(Images(R.drawable.ic_comerimg, "Comer"),Images(R.drawable.ic_saludarimg, "Saludar") )
-            ,listOf(Images(R.drawable.ic_comunicarimg, "Comunicar"),Images(R.drawable.ic_enseniarimg, "Enseñar") ) ,
-            listOf(Images(R.drawable.ic_comerimg, "Comer"),Images(R.drawable.ic_saludarimg, "Saludar") )
+            listOf(Images(R.drawable.ic_comunicarimg, context.getString(R.string.Comunicar) ),Images(R.drawable.ic_enseniarimg, context.getString(R.string.Enseñar) ) ) ,
+            listOf(Images(R.drawable.ic_comerimg, context.getString(R.string.Comer) ),Images(R.drawable.ic_saludarimg, context.getString(R.string.Saludar)) )
+            ,listOf(Images(R.drawable.ic_comunicarimg, context.getString(R.string.Comunicar) ),Images(R.drawable.ic_enseniarimg, context.getString(R.string.Enseñar)) ) ,
+            listOf(Images(R.drawable.ic_comerimg, context.getString(R.string.Comer) ),Images(R.drawable.ic_saludarimg, context.getString(R.string.Saludar)) )
+            ,listOf(Images(R.drawable.ic_comunicarimg, context.getString(R.string.Comunicar) ),Images(R.drawable.ic_enseniarimg, context.getString(R.string.Enseñar)) ) ,
+            listOf(Images(R.drawable.ic_comerimg, context.getString(R.string.Comer) ),Images(R.drawable.ic_saludarimg, context.getString(R.string.Saludar)) )
 
     )
 
     Scaffold (
-        topBar = { FunTopBar(navController, "Guardados") },
+        topBar = { FunTopBar(navController, context.getString(R.string.Guardados)) },
         bottomBar = { FunBottomBar(navController) }
 
     ){ innerPadding ->

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SignaLingo</string>
+
+    <string name="MenuPrincipal">Main Menu</string>
+    <string name="Empieza">Start learning</string>
+    <string name="Buscar">Search for sign</string>
+    <string name="HacerRecomendacion">Make Recommendation</string>
+    <string name="Guardados">Saves</string>
+    <string name="Perfil">Profile</string>
+    <string name="Nombre">Name</string>
+    <string name="Email">E-mail</string>
+    <string name="Quienes">About us</string>
+    <string name="Cerrar">Log out</string>
+    <string name="IniciarSesion">Log in</string>
+    <string name="CrearCuenta">Create account</string>
+    <string name="Registrarse">Register</string>
+    <string name="YaTengoUnaCuenta">Log in</string>
+
+    <string name="Verbos">Verbs</string>
+    <string name="Adjetivos">Adjectives</string>
+    <string name="Personas">People</string>
+    <string name="Alimentos">Food</string>
+    <string name="Calendarios">Calendar</string>
+    <string name="Lugares">Places</string>
+    <string name="Animales">Animals</string>
+    <string name="Comunicar">Comunicate</string>
+    <string name="Comer">Eat</string>
+    <string name="Saludar">Greet</string>
+    <string name="Enseñar">Teach</string>
+    <string name="Guardar">Save</string>
+
+
+    <string name="QuienesSomos">SignaLingo is a project which aims to provide a visual learning and education service to teach sign language focused on Spanish-speaking Guatemalans who wish to learn new words that are useful to them. This project is developed by students from the Universidad del Valle de Guatemala.</string>
+
+
+
+</resources>

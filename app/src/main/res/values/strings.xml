@@ -1,5 +1,43 @@
 <resources>
-    <string name="app_name">SignaLingo</string>
-    <string name="s1">Seña1</string>
-    <string name="web_client_id">506601784443-km94814200uul5ktq1baa64tn7gcbtv1.apps.googleusercontent.com</string>
+    <string name="app_name" translatable="false">SignaLingo</string>
+    <string name="s1" translatable="false">Seña1</string>
+    <string name="web_client_id" translatable="false">506601784443-km94814200uul5ktq1baa64tn7gcbtv1.apps.googleusercontent.com</string>
+
+    <string name="MenuPrincipal">Menu Principal</string>
+    <string name="Empieza">Empieza a aprender</string>
+    <string name="Buscar">Buscar Seña</string>
+    <string name="HacerRecomendacion">Hacer Recomendacion</string>
+    <string name="Guardados">Guardados</string>
+    <string name="Perfil">Perfil</string>
+    <string name="Nombre">Nombre</string>
+    <string name="Email">E-mail</string>
+    <string name="Quienes">Quienes Somos</string>
+    <string name="Cerrar">Cerrar sesión</string>
+    <string name="IniciarSesion">Iniciar Sesión</string>
+    <string name="CrearCuenta">Crear Cuenta</string>
+    <string name="Registrarse">Registrarse</string>
+    <string name="YaTengoUnaCuenta">Ya Tengo Una Cuenta</string>
+
+    <string name="Verbos">Verbos</string>
+    <string name="Adjetivos">Adjetivos</string>
+    <string name="Personas">Personas</string>
+    <string name="Alimentos">Alimentos</string>
+    <string name="Calendarios">Calendarios</string>
+    <string name="Lugares">Lugares</string>
+    <string name="Animales">Animales</string>
+    <string name="Comunicar">Comunicar</string>
+    <string name="Comer">Comer</string>
+    <string name="Saludar">Saludar</string>
+    <string name="Enseñar">Enseñar</string>
+    <string name="Guardar">Guardar</string>
+
+
+    <string name="QuienesSomos">SignaLingo es un proyecto el cual tiene como objetivo el brindar un servicio de aprendizaje y educación visual para enseñar lengua de señas enfocado en personas guatemaltecas hispano hablantes que deseen aprender  nuevas palabras que sean de su utilidad . Este proyecto es desarrollado por estudiantes de la Universidad del Valle de Guatemala.</string>
+
+
+
+
+
+
+
 </resources>
