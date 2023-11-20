@@ -73,7 +73,7 @@ fun SplashScreen(navController: NavController){
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
             ){
-            Text(text ="Singalingo...",
+            Text(text ="Signalingo...",
                 style = MaterialTheme.typography.titleLarge,
                 color = color.copy(alpha = 0.5f),
                 fontWeight= FontWeight.Bold
