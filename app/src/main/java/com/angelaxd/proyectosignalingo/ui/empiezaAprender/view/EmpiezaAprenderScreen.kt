@@ -47,7 +47,7 @@ fun funScaffoldEmpiezaprenderScreen(navController: NavHostController, context: C
         LazyColumn(modifier = Modifier.padding(innerPadding)) {
 
         items(categorias){item ->
-                Botones(navController , item, AppScreens.ContenidoScreen.route)
+                Botones(navController , item)
 
             }
 
@@ -56,11 +56,14 @@ fun funScaffoldEmpiezaprenderScreen(navController: NavHostController, context: C
 
 }
 @Composable
-fun Botones(navController: NavHostController, s:String, route: String){
+fun Botones(navController: NavHostController, s:String){
     Column(modifier = Modifier.padding(start=80.dp)) {
 
         Spacer(modifier = Modifier.height(45.dp))
-        Button( onClick =  { navController.navigate(route= route.toString()) },
+        //aqui se debe de mandar el parametro de item (s)
+        Button( onClick =  { navController.navigate(route= AppScreens.ContenidoScreen.createRoute(s)){
+            launchSingleTop = true
+        } },
             modifier= Modifier
                 .width(240.dp)
                 .height(50.dp),

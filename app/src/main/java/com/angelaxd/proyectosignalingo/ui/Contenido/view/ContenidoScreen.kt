@@ -12,47 +12,49 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SearchBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.isTraversalGroup
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.semantics.traversalIndex
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.angelaxd.proyectosignalingo.R
 import com.angelaxd.proyectosignalingo.navigation.AppScreens
-import com.angelaxd.proyectosignalingo.ui.Contenido.viewmodel.data
+//import com.angelaxd.proyectosignalingo.ui.Contenido.viewmodel.data
 import com.angelaxd.proyectosignalingo.ui.objetos.FunBottomBar
 import com.angelaxd.proyectosignalingo.ui.objetos.FunTopBar
 
 @Composable
 
-fun ContenidoScreen(navController: NavHostController){
-    funScaffoldContenido(navController)
+fun ContenidoScreen(navController: NavHostController, string: String){
+    funScaffoldContenido(navController,string)
 }
 
 @SuppressLint("UnrememberedMutableState", "UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun funScaffoldContenido(navController: NavHostController){
-    val data = data
+fun funScaffoldContenido(navController: NavHostController, string: String){
+    val context = LocalContext.current
+    val data = listOf(
+        context.getString(R.string.empezar),
+        context.getString(R.string.entender),
+        context.getString(R.string.esconder),
+        context.getString(R.string.extrañar),
+        context.getString(R.string.fallar),
+        context.getString(R.string.idear),
+        context.getString(R.string.inspirar),
+        context.getString(R.string.jugar)
+    )
 
     Scaffold (
-        topBar = { FunTopBar(navController, "Verbos") },
+        topBar = { FunTopBar(navController, string) },
         bottomBar = { FunBottomBar(navController) }
 
     ){

@@ -57,15 +57,21 @@ fun AppNavigation() {
         composable(route= AppScreens.HacerRecomendacionScreen.route){
             HacerRecomendacionScreen(navController)
         }
-        composable(route= AppScreens.ContenidoScreen.route){
-            ContenidoScreen(navController)
+        composable(route= AppScreens.ContenidoScreen.route,
+            arguments = listOf(navArgument(name= "string"){
+                type= NavType.StringType
+            })){
+                backStackEntry->
+            val arguments = requireNotNull(backStackEntry.arguments)
+            val string= arguments.getString("string") ?:""
+                ContenidoScreen(navController,string)
         }
         composable(route= AppScreens.SeniaScreen.route){
             SeniaScreen(navController)
         }
 
         composable(route= AppScreens.PruebaScreen.route,
-            arguments = listOf(navArgument(name= "email"){
+                arguments = listOf(navArgument(name= "email"){
                 type= NavType.StringType
             }
             )){backStackEntry->

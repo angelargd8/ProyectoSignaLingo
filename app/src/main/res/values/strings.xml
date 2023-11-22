@@ -36,6 +36,16 @@
     <string name="RecomendacionCreada">Recomendación Creada</string>
     <string name="CuentaCreada">Cuenta Creada</string>
 
+    <string name="empezar">empezar</string>
+    <string name="entender">entender</string>
+    <string name="esconder">esconder</string>
+    <string name="extrañar">extrañar</string>
+    <string name="fallar">fallar</string>
+    <string name="idear">idear</string>
+    <string name="inspirar">inspirar</string>
+    <string name="jugar">jugar</string>
+
+
 
     <string name="QuienesSomos">SignaLingo es un proyecto el cual tiene como objetivo el brindar un servicio de aprendizaje y educación visual para enseñar lengua de señas enfocado en personas guatemaltecas hispano hablantes que deseen aprender  nuevas palabras que sean de su utilidad . Este proyecto es desarrollado por estudiantes de la Universidad del Valle de Guatemala.</string>
 
