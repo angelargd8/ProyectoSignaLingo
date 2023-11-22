@@ -32,6 +32,8 @@
 
     <string name="titulo">Enter the title</string>
     <string name="IngresarRecomendacion">Enter recommendation</string>
+    <string name="RecomendacionCreada">Recommendation sent</string>
+    <string name="CuentaCreada">Account Created</string>
 
 
     <string name="QuienesSomos">SignaLingo is a project which aims to provide a visual learning and education service to teach sign language focused on Spanish-speaking Guatemalans who wish to learn new words that are useful to them. This project is developed by students from the Universidad del Valle de Guatemala.</string>
