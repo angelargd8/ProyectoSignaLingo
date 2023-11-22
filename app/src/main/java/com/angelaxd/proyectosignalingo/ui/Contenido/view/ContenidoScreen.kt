@@ -42,7 +42,8 @@ fun ContenidoScreen(navController: NavHostController, string: String){
 @Composable
 fun funScaffoldContenido(navController: NavHostController, string: String){
     val context = LocalContext.current
-    val data = listOf(
+    val data = condicion(navController, string)
+    /*val data = listOf(
         context.getString(R.string.empezar),
         context.getString(R.string.entender),
         context.getString(R.string.esconder),
@@ -51,7 +52,7 @@ fun funScaffoldContenido(navController: NavHostController, string: String){
         context.getString(R.string.idear),
         context.getString(R.string.inspirar),
         context.getString(R.string.jugar)
-    )
+    )*/
 
     Scaffold (
         topBar = { FunTopBar(navController, string) },
@@ -77,6 +78,110 @@ fun funScaffoldContenido(navController: NavHostController, string: String){
         }
     }
 }
+
+@Composable
+fun condicion(navController: NavHostController, string: String): List<String> {
+    val context = LocalContext.current
+    var dataa = listOf("")
+    if (string == context.getString(R.string.Verbos)){
+         dataa = listOf(
+            context.getString(R.string.empezar),
+            context.getString(R.string.entender),
+            context.getString(R.string.esconder),
+            context.getString(R.string.extrañar),
+            context.getString(R.string.fallar),
+            context.getString(R.string.idear),
+            context.getString(R.string.inspirar),
+            context.getString(R.string.jugar)
+        )
+
+
+    }else if (string == context.getString(R.string.Adjetivos)){
+        dataa = listOf(
+            context.getString(R.string.Adjetivos),
+            context.getString(R.string.entender),
+            context.getString(R.string.esconder),
+            context.getString(R.string.extrañar),
+            context.getString(R.string.fallar),
+            context.getString(R.string.idear),
+            context.getString(R.string.inspirar),
+            context.getString(R.string.jugar)
+        )
+
+
+    }else if (string == context.getString(R.string.Personas)){
+        dataa = listOf(
+            context.getString(R.string.empezar),
+            context.getString(R.string.entender),
+            context.getString(R.string.esconder),
+            context.getString(R.string.extrañar),
+            context.getString(R.string.fallar),
+            context.getString(R.string.idear),
+            context.getString(R.string.inspirar),
+            context.getString(R.string.jugar)
+        )
+
+
+    }else if (string == context.getString(R.string.Alimentos)){
+        dataa = listOf(
+            context.getString(R.string.empezar),
+            context.getString(R.string.entender),
+            context.getString(R.string.esconder),
+            context.getString(R.string.extrañar),
+            context.getString(R.string.fallar),
+            context.getString(R.string.idear),
+            context.getString(R.string.inspirar),
+            context.getString(R.string.jugar)
+        )
+
+
+    }else if (string == context.getString(R.string.Calendarios)){
+        dataa = listOf(
+            context.getString(R.string.empezar),
+            context.getString(R.string.entender),
+            context.getString(R.string.esconder),
+            context.getString(R.string.extrañar),
+            context.getString(R.string.fallar),
+            context.getString(R.string.idear),
+            context.getString(R.string.inspirar),
+            context.getString(R.string.jugar)
+        )
+
+
+    }else if (string == context.getString(R.string.Lugares)){
+        dataa = listOf(
+            context.getString(R.string.empezar),
+            context.getString(R.string.entender),
+            context.getString(R.string.esconder),
+            context.getString(R.string.extrañar),
+            context.getString(R.string.fallar),
+            context.getString(R.string.idear),
+            context.getString(R.string.inspirar),
+            context.getString(R.string.jugar)
+        )
+
+
+    }else if (string == context.getString(R.string.Animales)){
+        dataa = listOf(
+            context.getString(R.string.empezar),
+            context.getString(R.string.entender),
+            context.getString(R.string.esconder),
+            context.getString(R.string.extrañar),
+            context.getString(R.string.fallar),
+            context.getString(R.string.idear),
+            context.getString(R.string.inspirar),
+            context.getString(R.string.jugar)
+        )
+
+
+    }
+
+    return dataa
+}
+
+
+
+
 
 @Composable
 fun ListItemRow(item: String, navController: NavHostController) {
