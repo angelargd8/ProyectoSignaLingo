@@ -1,5 +1,6 @@
 package com.angelaxd.proyectosignalingo.navigation
 
+import android.annotation.SuppressLint
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -7,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.angelaxd.proyectosignalingo.ui.Contenido.view.ContenidoScreen
+import com.angelaxd.proyectosignalingo.ui.MostrarVideo.MostrarVideoScreen
 import com.angelaxd.proyectosignalingo.ui.Seña.view.SeniaScreen
 import com.angelaxd.proyectosignalingo.ui.buscarSeña.view.BuscarSenaScreen
 import com.angelaxd.proyectosignalingo.ui.empiezaAprender.view.EmpiezaprenderScreen
@@ -19,6 +21,7 @@ import com.angelaxd.proyectosignalingo.ui.perfil.view.PerfilScreen
 import com.angelaxd.proyectosignalingo.ui.quienesSomos.view.QuienesSomosScreen
 import com.angelaxd.proyectosignalingo.ui.singin.view.SignInScreen
 
+@SuppressLint("SuspiciousIndentation")
 @Composable
 fun AppNavigation() {
 
@@ -65,6 +68,15 @@ fun AppNavigation() {
             val arguments = requireNotNull(backStackEntry.arguments)
             val string= arguments.getString("string") ?:""
                 ContenidoScreen(navController,string)
+        }
+        composable(route= AppScreens.MostrarVideoScreen.route,
+            arguments = listOf(navArgument(name= "string"){
+                type= NavType.StringType
+            })){
+                backStackEntry->
+            val arguments = requireNotNull(backStackEntry.arguments)
+            val string= arguments.getString("string") ?:""
+            MostrarVideoScreen(navController,string)
         }
         composable(route= AppScreens.SeniaScreen.route){
             SeniaScreen(navController)

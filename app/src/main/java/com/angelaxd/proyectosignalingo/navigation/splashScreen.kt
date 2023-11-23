@@ -45,16 +45,16 @@ fun SplashScreen(navController: NavController){
         )
         delay(500L)
 
-        if(FirebaseAuth.getInstance().currentUser!!.email.isNullOrEmpty()){
-        navController.navigate(route= AppScreens.LoginScreen.route)
-        }else{
-        navController.navigate(route= AppScreens.MenuPrincipalScreen.route){
-            popUpTo(AppScreens.SplashScreen.route){
-                inclusive = true
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser != null && !currentUser.email.isNullOrEmpty()) {
+            navController.navigate(route = AppScreens.MenuPrincipalScreen.route) {
+                popUpTo(AppScreens.SplashScreen.route) {
+                    inclusive = true
+                }
             }
+        } else {
+            navController.navigate(route = AppScreens.LoginScreen.route)
         }
-
-    }
 
         //navController.navigate(AppScreens.LoginScreen.route)
 

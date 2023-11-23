@@ -28,6 +28,8 @@ import androidx.navigation.NavHostController
 import com.angelaxd.proyectosignalingo.R
 import com.angelaxd.proyectosignalingo.ui.objetos.FunBottomBar
 import com.angelaxd.proyectosignalingo.ui.objetos.FunTopBar
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.firestore
 
 @Composable
 fun GuardadosScreen(navController: NavHostController){
@@ -43,6 +45,7 @@ data class Images(var img: Int, var txt1 : String)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun funScaffoldGuardados(navController: NavHostController, context: Context){
+    val db = Firebase.firestore
     var saves =
         listOf(
             listOf(Images(R.drawable.ic_comunicarimg, context.getString(R.string.Comunicar) ),Images(R.drawable.ic_enseniarimg, context.getString(R.string.Enseñar) ) ) ,
@@ -80,6 +83,8 @@ fun funScaffoldGuardados(navController: NavHostController, context: Context){
 
     }
 }
+
+
 
 
 @OptIn(ExperimentalMaterial3Api::class)

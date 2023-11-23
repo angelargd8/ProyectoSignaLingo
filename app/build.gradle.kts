@@ -52,6 +52,8 @@ android {
 
 dependencies {
 
+    implementation("com.google.android.exoplayer:exoplayer:2.14.1")
+
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     implementation("androidx.activity:activity-compose:1.8.0")
@@ -91,6 +93,8 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
     implementation("com.google.firebase:firebase-firestore-ktx:24.9.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("com.google.firebase:firebase-database-ktx:20.3.0")
 
 
 

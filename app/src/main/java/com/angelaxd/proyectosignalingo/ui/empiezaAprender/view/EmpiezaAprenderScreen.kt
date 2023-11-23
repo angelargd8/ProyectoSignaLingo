@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.angelaxd.proyectosignalingo.R
 import com.angelaxd.proyectosignalingo.navigation.AppScreens
+import com.angelaxd.proyectosignalingo.ui.objetos.Botones
 import com.angelaxd.proyectosignalingo.ui.objetos.FunBottomBar
 import com.angelaxd.proyectosignalingo.ui.objetos.FunTopBar
 
@@ -35,10 +36,10 @@ fun EmpiezaprenderScreen(navController: NavHostController){
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun funScaffoldEmpiezaprenderScreen(navController: NavHostController, context: Context){
-    // variable temporal para ense;ar informacion
-    var categorias = listOf(context.getString(R.string.Verbos), context.getString(R.string.Adjetivos), context.getString(R.string.Personas), context.getString(R.string.Alimentos), context.getString(R.string.Calendarios),context.getString(R.string.Lugares), context.getString(R.string.Animales))
+    // variable temporal para ense;ar informacion (se puede incluir en firebase o dejarlo aqui)
+    var categorias = listOf(context.getString(R.string.Verbos), context.getString(R.string.Adjetivos), context.getString(R.string.Alimentos), context.getString(R.string.Calendarios),context.getString(R.string.Lugares), context.getString(R.string.Animales))
 
-
+    // encabezado y menu inferior
     Scaffold (
         topBar = { FunTopBar(navController, context.getString(R.string.Empieza)) },
         bottomBar = { FunBottomBar(navController) }
@@ -46,33 +47,14 @@ fun funScaffoldEmpiezaprenderScreen(navController: NavHostController, context: C
     ){ innerPadding ->
         LazyColumn(modifier = Modifier.padding(innerPadding)) {
 
+            // muestra los botones de categorias
         items(categorias){item ->
-                Botones(navController , item)
-
+                Botones(navController , item) // funcion botones en objetos
             }
 
         }
     }
 
 }
-@Composable
-fun Botones(navController: NavHostController, s:String){
-    Column(modifier = Modifier.padding(start=80.dp)) {
 
-        Spacer(modifier = Modifier.height(45.dp))
-        //aqui se debe de mandar el parametro de item (s)
-        Button( onClick =  { navController.navigate(route= AppScreens.ContenidoScreen.createRoute(s)){
-            launchSingleTop = true
-        } },
-            modifier= Modifier
-                .width(240.dp)
-                .height(50.dp),
-            colors= ButtonDefaults.buttonColors(containerColor = Color(0xFF6650a4), contentColor = Color.White)
-        ) {
-            Text(text = s)
-        }
-
-    }
-
-}
 

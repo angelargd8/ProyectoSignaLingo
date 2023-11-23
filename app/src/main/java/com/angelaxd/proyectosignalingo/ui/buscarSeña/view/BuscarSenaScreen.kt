@@ -27,10 +27,10 @@ import androidx.compose.ui.semantics.traversalIndex
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.angelaxd.proyectosignalingo.R
-import com.angelaxd.proyectosignalingo.ui.Contenido.view.ListItemRow
 import com.angelaxd.proyectosignalingo.ui.Contenido.viewmodel.data
 import com.angelaxd.proyectosignalingo.ui.objetos.FunBottomBar
 import com.angelaxd.proyectosignalingo.ui.objetos.FunTopBar
+import com.angelaxd.proyectosignalingo.ui.objetos.ListItemRow
 
 @Composable
 

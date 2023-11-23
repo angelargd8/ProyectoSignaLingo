@@ -18,6 +18,9 @@ sealed class AppScreens(val route: String){
     object ContenidoScreen: AppScreens("Contenido/{string}"){
         fun createRoute(string: String) = "Contenido/$string"
     }
+    object MostrarVideoScreen: AppScreens("Video/{string}"){
+        fun createRoute(string: String) = "Video/$string"
+    }
 
     object SeniaScreen: AppScreens("Senia")
 
