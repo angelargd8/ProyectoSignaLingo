@@ -1,12 +1,15 @@
 package com.angelaxd.proyectosignalingo.ui.MostrarVideo.View
 
 import android.annotation.SuppressLint
+import android.service.controls.ControlsProviderService
+import android.service.controls.ControlsProviderService.TAG
 import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -57,10 +60,12 @@ fun funScaffoldVideo(navController: NavHostController, string: String) {
             Column(
                 modifier = Modifier.padding(top = 100.dp)
             ) {
-                Card(){
+                Card {
                     VideoPlayer(url)
-                    VideosVM.obtenerDato("Alimentos")
                 }
+                Text(text = VideosVM.obtenerDato("Alimentos", "aceite")["aceite"].toString())
+                println("Hola")
+                Log.d(TAG, "probanfo")
 
             }
         }
@@ -70,7 +75,7 @@ fun funScaffoldVideo(navController: NavHostController, string: String) {
 
 @Composable
 fun VideoPlayer(url:String){
-    val sampleVideo = "https://storage.googleapis.com/videos-signalingo/Verbos/Leer.mp4"
+    val sampleVideo = "https://storage.googleapis.com/videos-signalingo/Verbos/Empezar.mp4"
     val context = LocalContext.current
     val player = SimpleExoPlayer.Builder(context).build()
     val playerView = PlayerView(context)
