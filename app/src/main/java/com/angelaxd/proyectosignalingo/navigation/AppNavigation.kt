@@ -8,7 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.angelaxd.proyectosignalingo.ui.Contenido.view.ContenidoScreen
-import com.angelaxd.proyectosignalingo.ui.MostrarVideo.MostrarVideoScreen
+import com.angelaxd.proyectosignalingo.ui.MostrarVideo.View.MostrarVideoScreen
 import com.angelaxd.proyectosignalingo.ui.Seña.view.SeniaScreen
 import com.angelaxd.proyectosignalingo.ui.buscarSeña.view.BuscarSenaScreen
 import com.angelaxd.proyectosignalingo.ui.empiezaAprender.view.EmpiezaprenderScreen
