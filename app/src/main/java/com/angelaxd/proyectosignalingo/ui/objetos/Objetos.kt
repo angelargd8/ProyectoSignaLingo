@@ -18,10 +18,12 @@ import androidx.compose.material.icons.filled.BookmarkBorder
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Mood
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -85,7 +87,7 @@ fun FunTopBar(navController: NavController, texto: String){
             IconButton(onClick = { navController.navigate(route= AppScreens.MenuPrincipalScreen.route) })
             {
                 Icon(
-                    imageVector = Icons.Filled.Menu, contentDescription = "menu", modifier= Modifier.size(48.dp)
+                    imageVector = Icons.Filled.Mood, contentDescription = "menu", modifier= Modifier.size(48.dp)
                 )
             }
             Spacer(modifier = Modifier.width(50.dp))
@@ -191,40 +193,59 @@ fun ListItemRow(item: String, navController: NavHostController) {
     val viewModelGuardados : GuardadosViewmodel = viewModel()
     val context = LocalContext.current
 
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(48.dp)
-            .padding(horizontal = 16.dp, vertical = 8.dp)
-            .background(Color.Transparent)
-            .clickable {navController.navigate(route= AppScreens.MostrarVideoScreen.createRoute(item))  },
+    Card(modifier = Modifier
+        .padding(10.dp),
+        colors = CardDefaults.cardColors(
+            Color(0xB28165CF)
+        )
+
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(48.dp)
+                .padding(horizontal = 16.dp, vertical = 8.dp)
+                .background(Color.Transparent)
+                .clickable {
+                    navController.navigate(
+                        route = AppScreens.MostrarVideoScreen.createRoute(
+                            item
+                        )
+                    )
+                },
 
 
-        ) {
-        Icon( painter = painterResource(id = R.drawable.ic_icono), contentDescription = "")
+            ) {
+            Icon( painter = painterResource(id = R.drawable.ic_icono), contentDescription = "")
 
 
-        Text(text = item, Modifier.weight(4f).padding(start = 10.dp))
+            Text(text = item,
+                Modifier
+                    .weight(4f)
+                    .padding(start = 10.dp))
 
-        IconButton(
-            onClick = {
-                viewModelGuardados.createGuardado(item){
-                    Toast.makeText(context, context.getString(R.string.Guardado), Toast.LENGTH_SHORT).show()
-                    navController.navigate(route= AppScreens.MenuPrincipalScreen.route)
-                }
-        },
-            Modifier
-                .size(30.dp)
-                .padding(5.dp)
-                .weight(1f),
+            IconButton(
+                onClick = {
+                    viewModelGuardados.createGuardado(item){
+                        Toast.makeText(context, context.getString(R.string.Guardado), Toast.LENGTH_SHORT).show()
+                        navController.navigate(route= AppScreens.MenuPrincipalScreen.route)
+                    }
+                },
+                Modifier
+                    .size(30.dp)
+                    .padding(5.dp)
+                    .weight(1f),
 
-        ) {
-            Icon(
-                imageVector = Icons.Filled.FavoriteBorder, contentDescription = "Favorite", modifier= Modifier.size(48.dp)
-            )
+                ) {
+                Icon(
+                    imageVector = Icons.Filled.FavoriteBorder, contentDescription = "Favorite", modifier= Modifier.size(48.dp)
+                )
+            }
+
+
+
         }
-
-
-
     }
+
+
 }

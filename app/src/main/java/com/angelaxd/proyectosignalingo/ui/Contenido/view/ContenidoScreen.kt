@@ -76,7 +76,8 @@ fun condicion(navController: NavHostController, string: String): List<String> {
         )
 
 
-    }else if (string == context.getString(R.string.Alimentos)){
+    }
+    else if (string == context.getString(R.string.Alimentos)){
         dataa = listOf(
             context.getString(R.string.pandulce),
             context.getString(R.string.PanFrances),
@@ -118,7 +119,12 @@ fun condicion(navController: NavHostController, string: String): List<String> {
 
     }else if (string == context.getString(R.string.Animales)){
         dataa = listOf(
-            context.getString(R.string.empezar)
+            context.getString(R.string.abeja) ,
+            context.getString(R.string.insectos),
+            context.getString(R.string.mosca),
+            context.getString(R.string.mosquito),
+            context.getString(R.string.zancudo)
+
         )
 
 

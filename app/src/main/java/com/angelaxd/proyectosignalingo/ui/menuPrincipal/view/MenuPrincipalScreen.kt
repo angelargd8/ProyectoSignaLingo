@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -62,7 +64,8 @@ fun RowImagen(){
 }
 @Composable
 fun Botones(navController: NavHostController, context: Context){
-    Column(modifier = Modifier.padding(start=80.dp)) {
+    val scrollState = rememberScrollState()
+    Column(modifier = Modifier.padding(start=80.dp).verticalScroll(state= scrollState)) {
 
         Spacer(modifier = Modifier.height(45.dp))
         Button( onClick =  { navController.navigate(route= AppScreens.EmpiezaAprenderScreen.route) },
