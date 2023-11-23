@@ -78,6 +78,12 @@
     <string name="nicaragua" translatable="false">Nicaragua</string>
     <string name="panama" translatable="false">Panama</string>
 
+    <string name="abeja" translatable="false">abeja</string>
+    <string name="insectos" translatable="false">insectos</string>
+    <string name="mosca" translatable="false">mosca</string>
+    <string name="mosquito" translatable="false">mosquito</string>
+    <string name="zancudo" translatable="false">zancudo</string>
+
 
 
 

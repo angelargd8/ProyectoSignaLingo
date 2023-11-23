@@ -68,6 +68,12 @@
     <string name="temprano">early</string>
     <string name="viernes">friday</string>
 
+    <string name="abeja" translatable="false">bee</string>
+    <string name="insectos" translatable="false">insect</string>
+    <string name="mosca" translatable="false">fly</string>
+    <string name="mosquito" translatable="false">mosquito</string>
+    <string name="zancudo" translatable="false">mosquito</string>
+
 
     <string name="QuienesSomos">SignaLingo is a project which aims to provide a visual learning and education service to teach sign language focused on Spanish-speaking Guatemalans who wish to learn new words that are useful to them. This project is developed by students from the Universidad del Valle de Guatemala.</string>
 

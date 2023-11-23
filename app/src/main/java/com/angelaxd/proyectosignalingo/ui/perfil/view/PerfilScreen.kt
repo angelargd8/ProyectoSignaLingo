@@ -72,14 +72,14 @@ fun BoxFun(navController: NavHostController, context: Context) {
 
     ){
         //Spacer(modifier =Modifier.width(100.dp))
-        Imagen("https://static.vecteezy.com/system/resources/previews/000/597/915/original/sweet-color-blurred-background-set-pastel-color-design-vector.jpg", 10000000, 1000000);
+        Imagen("https://i.imgur.com/tQp3omr.png", 1000000, 1000000);
         Column(modifier = Modifier.padding(top = 100.dp, bottom = 20.dp,start=130.dp)){//top = 315.dp, bottom = 2.dp,start=10.dp
 
             Imagen("https://www.leadsourcing.co.in/images/user.png", 350, 350);
             Spacer(modifier = Modifier.height(10.dp))
             val nombreUser = FirebaseAuth.getInstance().currentUser!!.email!!.substringBefore("@")
             Text(text = nombreUser,
-                Modifier.padding(start= 48.dp)
+                Modifier.padding(start= 45.dp)
                 )
         }
     }
