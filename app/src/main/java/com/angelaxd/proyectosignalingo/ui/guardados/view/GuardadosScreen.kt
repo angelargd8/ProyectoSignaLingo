@@ -2,34 +2,35 @@ package com.angelaxd.proyectosignalingo.ui.guardados.view
 
 import android.annotation.SuppressLint
 import android.content.Context
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Card
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.angelaxd.proyectosignalingo.R
+import com.angelaxd.proyectosignalingo.data.Guardado
+import com.angelaxd.proyectosignalingo.data.GuardadosState
+import com.angelaxd.proyectosignalingo.ui.guardados.viewmodel.getGuardadosViewmodel
 import com.angelaxd.proyectosignalingo.ui.objetos.FunBottomBar
 import com.angelaxd.proyectosignalingo.ui.objetos.FunTopBar
-import com.google.firebase.Firebase
-import com.google.firebase.firestore.firestore
 
 @Composable
 fun GuardadosScreen(navController: NavHostController){
@@ -37,7 +38,7 @@ fun GuardadosScreen(navController: NavHostController){
     funScaffoldGuardados(navController, context)
 }
 
-data class Images(var img: Int, var txt1 : String)
+//data class Images(var img: Int, var txt1 : String)
 
 
 
@@ -45,73 +46,96 @@ data class Images(var img: Int, var txt1 : String)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun funScaffoldGuardados(navController: NavHostController, context: Context){
-    val db = Firebase.firestore
-    var saves =
-        listOf(
-            listOf(Images(R.drawable.ic_comunicarimg, context.getString(R.string.Comunicar) ),Images(R.drawable.ic_enseniarimg, context.getString(R.string.Enseñar) ) ) ,
-            listOf(Images(R.drawable.ic_comerimg, context.getString(R.string.Comer) ),Images(R.drawable.ic_saludarimg, context.getString(R.string.Saludar)) )
-            ,listOf(Images(R.drawable.ic_comunicarimg, context.getString(R.string.Comunicar) ),Images(R.drawable.ic_enseniarimg, context.getString(R.string.Enseñar)) ) ,
-            listOf(Images(R.drawable.ic_comerimg, context.getString(R.string.Comer) ),Images(R.drawable.ic_saludarimg, context.getString(R.string.Saludar)) )
-            ,listOf(Images(R.drawable.ic_comunicarimg, context.getString(R.string.Comunicar) ),Images(R.drawable.ic_enseniarimg, context.getString(R.string.Enseñar)) ) ,
-            listOf(Images(R.drawable.ic_comerimg, context.getString(R.string.Comer) ),Images(R.drawable.ic_saludarimg, context.getString(R.string.Saludar)) )
 
-    )
+    val viewModelGetGuardados : getGuardadosViewmodel = viewModel()
 
-    Scaffold (
-        topBar = { FunTopBar(navController, context.getString(R.string.Guardados)) },
-        bottomBar = { FunBottomBar(navController) }
+    when(val result = viewModelGetGuardados.response.value){
+        is GuardadosState.Loading -> {
+            Loading()
+        }
+        is GuardadosState.Success -> {
+            var data = result.data
+            //EstructuraGuardados(navController, result.data)
 
-    ){ innerPadding ->
-        LazyColumn(modifier = Modifier
-            .padding(innerPadding),
+            //    topBar = { FunTopBar(navController, context.getString(R.string.Guardados)) },
+            Scaffold (
+                topBar = { FunTopBar(navController, context.getString(R.string.Guardados)) },
+                bottomBar = { FunBottomBar(navController) }
 
-        ) {
+            ){ innerPadding ->
+                Box(modifier = Modifier.padding(innerPadding)) {
 
-            items(saves) { save ->
-                Row(
-                    horizontalArrangement = Arrangement.Center,
-                    modifier = Modifier
+                    Column( modifier = Modifier
                         .padding(10.dp)
+                        .fillMaxHeight(),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    )
+                    {
+                        Spacer(modifier = Modifier.height(30.dp))
+                        textos(data)
 
-                ) {
-                    Cards(save[0], navController)
-                    Cards(save[1], navController)
+                    }
+
                 }
+            }
 
+
+
+        }
+        is GuardadosState.Failure-> {
+            Errorl(result)
+        }
+        else -> {
+            Box(modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center){
+
+                Text(
+                    text = "ERROR",
+                    fontSize = 15.sp,
+                    color = Color(0xFFE91E63),
+                    overflow = TextOverflow.Ellipsis //como se maneja el desbordamiento
+                )
             }
         }
-
     }
+
+
 }
 
-
-
-
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Cards(  p: Images, navController: NavHostController) {
-    Card(
-        modifier = Modifier
-            .padding(30.dp)
-
-    ) {
-        Image(
-            painter = painterResource(id = p.img),
-            contentDescription = stringResource(id = R.string.s1),
-            contentScale = ContentScale.Fit,
-            modifier = Modifier
-                .size(130.dp)
-        )
-        Text(
-            text = p.txt1, fontSize = 20.sp,
-            fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center,
-            fontStyle = FontStyle.Italic,
-
-            )
-
+fun textos(data: MutableList<Guardado>) {
+    //Text(text = data, fontSize = 30.sp)
+    LazyColumn {
+        items(data.size) { index ->
+            data[index].title?.let { Text(text = it, fontSize = 30.sp) }
+        }
     }
 }
 
+
+
+@Composable
+fun Loading() {
+    Box(modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center){
+        CircularProgressIndicator()
+    }
+}
+
+@Composable
+fun Errorl(result: GuardadosState.Failure) {
+    Box(modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center){
+
+        Text(
+            text = result.message,
+            fontSize = 15.sp,
+            color = Color(0xFFE91E63),
+            overflow = TextOverflow.Ellipsis //como se maneja el desbordamiento
+        )
+    }
+
+}
 
 
