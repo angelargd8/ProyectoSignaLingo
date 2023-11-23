@@ -50,7 +50,7 @@ fun funScaffoldVideo(navController: NavHostController, string: String) {
     database = Firebase.database.reference
     val url = condicion(navController, string)  // condicion de que valor se mando de parametro
     val VideosVM : VideosVM = viewModel()
-
+    //val g= VideosVM.obtenerURL(dato = "Alimentos")
     Scaffold (
         topBar = { FunTopBar(navController, string) },
         bottomBar = { FunBottomBar(navController) }
@@ -63,9 +63,7 @@ fun funScaffoldVideo(navController: NavHostController, string: String) {
                 Card {
                     VideoPlayer(url)
                 }
-                Text(text = VideosVM.obtenerDato("Alimentos", "aceite")["aceite"].toString())
-                println("Hola")
-                Log.d(TAG, "probanfo")
+
 
             }
         }
@@ -75,7 +73,7 @@ fun funScaffoldVideo(navController: NavHostController, string: String) {
 
 @Composable
 fun VideoPlayer(url:String){
-    val sampleVideo = "https://storage.googleapis.com/videos-signalingo/Verbos/Empezar.mp4"
+    val sampleVideo = url
     val context = LocalContext.current
     val player = SimpleExoPlayer.Builder(context).build()
     val playerView = PlayerView(context)
@@ -99,15 +97,165 @@ fun VideoPlayer(url:String){
 
 
 @Composable
-fun condicion(navController: NavHostController, string: String): String{
+fun condicion(navController: NavHostController, string:String): String{
 
     val context = LocalContext.current
     var dataa=""
 
     if (string == context.getString(R.string.Comer)) {
 
-        dataa = "https://www.youtube.com/watch?v=8ZY8p9YdDgQ"
+        dataa = "https://storage.googleapis.com/videos-signalingo/Verbos/Leer.mp4"
     }
+    if (string == context.getString(R.string.empezar)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Verbos/Empezar.mp4"
+    }
+    if (string == context.getString(R.string.entender)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Verbos/Entender.mp4"
+    }
+    if (string == context.getString(R.string.extrañar)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Verbos/Esconder.mp4"
+    }
+    if (string == context.getString(R.string.fallar)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Verbos/Fallar.mp4"
+    }
+    if (string == context.getString(R.string.idear)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Verbos/Fallar.mp4"
+    }
+    if (string == context.getString(R.string.inspirar)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Verbos/Inspirar.mp4"
+    }
+    if (string == context.getString(R.string.jugar)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Verbos/Jugar.mp4"
+    }
+    if (string == context.getString(R.string.leer)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Verbos/Leer.mp4"
+
+        // animales
+    }
+    if (string == context.getString(R.string.empezar)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Animales/abeja.mp4"
+    }
+    if (string == context.getString(R.string.empezar)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Animales/animales.mp4"
+    }
+    if (string == context.getString(R.string.empezar)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Animales/insectos.mp4"
+    }
+    if (string == context.getString(R.string.empezar)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Animales/mosca.mp4"
+    }
+    if (string == context.getString(R.string.empezar)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Animales/mosquito.mp4"
+    }
+    if (string == context.getString(R.string.empezar)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Animales/zancudo.mp4"
+    }
+
+    // lugares
+
+    if (string == context.getString(R.string.belice)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Lugares/Belice.mp4"
+    }
+    if (string == context.getString(R.string.honduras)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Lugares/honduras.mp4"
+    }
+    if (string == context.getString(R.string.centroamerica)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Lugares/Centroamerica.mp4"
+    }
+    if (string == context.getString(R.string.guatemala)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Lugares/Guatemala.mp4"
+    }
+    if (string == context.getString(R.string.costarica)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Lugares/Costa%20Rica.mp4"
+    }
+    if (string == context.getString(R.string.elsalvador)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Lugares/El%20Salvador.mp4"
+    }
+    if (string == context.getString(R.string.panama)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Lugares/Panama.mp4"
+    }
+    if (string == context.getString(R.string.nicaragua)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Lugares/Nicaragua.mp4"
+
+    }
+
+    //calendario
+    if (string == context.getString(R.string.lunes)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Calendario/Lunes.mp4"
+    }
+    if (string == context.getString(R.string.martes)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Calendario/martes.mp4"
+    }
+    if (string == context.getString(R.string.miercoles)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Calendario/miercoles.mp4"
+
+    }
+    if (string == context.getString(R.string.jueves )) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Calendario/Jueves.mp4"
+    }
+    if (string == context.getString(R.string.viernes)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Calendario/Viernes.mp4"
+    }
+    if (string == context.getString(R.string.sabado)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Calendario/Sabado.mp4"
+    }
+    if (string == context.getString(R.string.hora)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Calendario/Hora.mp4"
+    }
+    if (string == context.getString(R.string.atrasado)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Calendario/atrasado.mp4"
+    }
+    if (string == context.getString(R.string.tarde)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Calendario/tarde.mp4"
+    }
+    if (string == context.getString(R.string.temprano)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Calendario/temprano.mp4"
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     return dataa
