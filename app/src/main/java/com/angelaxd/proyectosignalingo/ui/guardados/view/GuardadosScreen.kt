@@ -92,7 +92,7 @@ fun funScaffoldGuardados(navController: NavHostController, context: Context){
                 contentAlignment = Alignment.Center){
 
                 Text(
-                    text = "ERROR",
+                    text = "...",
                     fontSize = 15.sp,
                     color = Color(0xFFE91E63),
                     overflow = TextOverflow.Ellipsis //como se maneja el desbordamiento

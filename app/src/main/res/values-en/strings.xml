@@ -44,6 +44,29 @@
     <string name="idear">devise</string>
     <string name="inspirar">inspire</string>
     <string name="jugar">play</string>
+    <string name="leer">read</string>
+
+
+    <string name="Carne">meat</string>
+    <string name="PanFrances">French bread</string>
+    <string name="aceite">oil</string>
+    <string name="mantequilla">butter</string>
+    <string name="miel">honey</string>
+    <string name="pandulce">sweet bread</string>
+    <string name="salsadetomate">tomato sauce</string>
+
+
+    <string name="atrasado">late</string>
+    <string name="hora">hour</string>
+    <string name="jueves">thursday</string>
+    <string name="lunes">monday</string>
+    <string name="martes">tuesday</string>
+    <string name="miercoles">wednesday</string>
+    <string name="pasado">past</string>
+    <string name="sabado">saturday</string>
+    <string name="tarde">late</string>
+    <string name="temprano">early</string>
+    <string name="viernes">friday</string>
 
 
     <string name="QuienesSomos">SignaLingo is a project which aims to provide a visual learning and education service to teach sign language focused on Spanish-speaking Guatemalans who wish to learn new words that are useful to them. This project is developed by students from the Universidad del Valle de Guatemala.</string>

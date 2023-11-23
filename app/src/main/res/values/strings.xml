@@ -45,6 +45,39 @@
     <string name="idear">idear</string>
     <string name="inspirar">inspirar</string>
     <string name="jugar">jugar</string>
+    <string name="leer">leer</string>
+
+
+    <string name="Carne">Carne</string>
+    <string name="PanFrances">Pan Frances</string>
+    <string name="aceite">aceite</string>
+    <string name="mantequilla">mantequilla</string>
+    <string name="miel">miel</string>
+    <string name="pandulce">pan dulce</string>
+    <string name="salsadetomate">salsa de tomate</string>
+
+
+    <string name="atrasado">atrasado</string>
+    <string name="hora">hora</string>
+    <string name="jueves">jueves</string>
+    <string name="lunes">lunes</string>
+    <string name="martes">martes</string>
+    <string name="miercoles">miercoles</string>
+    <string name="pasado">pasado</string>
+    <string name="sabado">sabado</string>
+    <string name="tarde">tarde</string>
+    <string name="temprano">temprano</string>
+    <string name="viernes">viernes</string>
+
+    <string name="belice" translatable="false">Belice</string>
+    <string name="centroamerica" translatable="false">Centroamerica</string>
+    <string name="costarica" translatable="false">Costarica</string>
+    <string name="elsalvador" translatable="false">El Salvador</string>
+    <string name="guatemala" translatable="false">Guatemala</string>
+    <string name="honduras" translatable="false">Honduras</string>
+    <string name="nicaragua" translatable="false">Nicaragua</string>
+    <string name="panama" translatable="false">Panama</string>
+
 
 
 
