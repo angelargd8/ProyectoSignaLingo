@@ -34,6 +34,7 @@
     <string name="IngresarRecomendacion">Enter recommendation</string>
     <string name="RecomendacionCreada">Recommendation sent</string>
     <string name="CuentaCreada">Account Created</string>
+    <string name="Guardado">Saved</string>
 
     <string name="empezar">start</string>
     <string name="entender">unerstand</string>

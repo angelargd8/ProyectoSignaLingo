@@ -1,8 +1,8 @@
 package com.angelaxd.proyectosignalingo.ui.objetos
 
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.BookmarkBorder
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Home
@@ -31,7 +30,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -41,12 +39,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.angelaxd.proyectosignalingo.R
 import com.angelaxd.proyectosignalingo.navigation.AppScreens
+import com.angelaxd.proyectosignalingo.ui.guardados.viewmodel.GuardadosViewmodel
 
 @Composable
 fun Imagen(link: String, width: Int, height: Int){
@@ -188,6 +188,8 @@ fun Botones(navController: NavHostController, s:String){ // s es el parametro de
 
 @Composable
 fun ListItemRow(item: String, navController: NavHostController) {
+    val viewModelGuardados : GuardadosViewmodel = viewModel()
+    val context = LocalContext.current
 
     Row(
         modifier = Modifier
@@ -206,7 +208,10 @@ fun ListItemRow(item: String, navController: NavHostController) {
 
         IconButton(
             onClick = {
-            navController.navigate(route= AppScreens.HacerRecomendacionScreen.route)
+                viewModelGuardados.createGuardado(item){
+                    Toast.makeText(context, context.getString(R.string.Guardado), Toast.LENGTH_SHORT).show()
+                    navController.navigate(route= AppScreens.MenuPrincipalScreen.route)
+                }
         },
             Modifier
                 .size(30.dp)
