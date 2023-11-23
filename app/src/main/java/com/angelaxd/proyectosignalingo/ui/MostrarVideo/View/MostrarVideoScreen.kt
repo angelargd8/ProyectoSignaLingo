@@ -116,7 +116,7 @@ fun condicion(navController: NavHostController, string:String): String{
     }
     if (string == context.getString(R.string.extrañar)) {
 
-        dataa = "https://storage.googleapis.com/videos-signalingo/Verbos/Esconder.mp4"
+        dataa = "https://storage.googleapis.com/videos-signalingo/Verbos/Extrañar.mp4"
     }
     if (string == context.getString(R.string.fallar)) {
 
@@ -124,7 +124,7 @@ fun condicion(navController: NavHostController, string:String): String{
     }
     if (string == context.getString(R.string.idear)) {
 
-        dataa = "https://storage.googleapis.com/videos-signalingo/Verbos/Fallar.mp4"
+        dataa = "https://storage.googleapis.com/videos-signalingo/Verbos/Idear.mp4"
     }
     if (string == context.getString(R.string.inspirar)) {
 

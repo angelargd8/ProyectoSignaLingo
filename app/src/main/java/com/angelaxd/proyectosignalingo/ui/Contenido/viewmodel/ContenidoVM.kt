@@ -1,34 +1,53 @@
 package com.angelaxd.proyectosignalingo.ui.Contenido.viewmodel
 
+import com.angelaxd.proyectosignalingo.R
+
 val data = listOf(
-    "correr",
-    "saltar",
-    "nadar",
-    "bailar",
-    "cantar",
-    "estudiar",
-    "aprender",
-    "enseñar",
-    "escribir",
-    "leer",
-    "cocinar",
-    "comer",
-    "beber",
-    "dormir",
-    "despertar",
-    "trabajar",
-    "jugar",
-    "pensar",
-    "hablar",
-    "escuchar",
-    "observar",
-    "viajar",
-    "caminar",
-    "comprar",
-    "vender",
-    "conducir",
-    "volar",
-    "navegar",
-    "construir"
+        "empezar",
+        "Carne",
+        "PanFrances",
+        "aceite",
+        "mantequilla",
+        "miel",
+        "pandulce",
+        "salsadetomate",
+        "atrasado",
+        "hora",
+        "jueves",
+        "viernes",
+        "lunes",
+        "martes",
+        "miercoles",
+        "pasado",
+        "sabado",
+        "tarde",
+        "temprano",
+        "belice",
+        "centroamerica",
+        "costarica",
+        "elsalvador",
+        "guatemala",
+        "honduras",
+        "nicaragua",
+        "panama",
+        "empezar",
+        "entender",
+        "esconder",
+        "fallar",
+        "extrañar",
+        "idear",
+        "fallar",
+        "jugar",
+        "leer"
+
+
+
+
+
+
+
+
 )
+
+
 
