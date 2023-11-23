@@ -244,7 +244,35 @@ fun condicion(navController: NavHostController, string:String): String{
         dataa = "https://storage.googleapis.com/videos-signalingo/Calendario/temprano.mp4"
     }
 
+    // alimentos
+    if (string == context.getString(R.string.aceite)) {
 
+        dataa = "https://storage.googleapis.com/videos-signalingo/Alimentos/Aceite.mp4"
+    }
+    if (string == context.getString(R.string.Carne)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Alimentos/Carne.mp4"
+    }
+    if (string == context.getString(R.string.mantequilla)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Alimentos/Mantequilla.mp4"
+    }
+    if (string == context.getString(R.string.miel)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Alimentos/Miel.mp4"
+    }
+    if (string == context.getString(R.string.pandulce)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Alimentos/Pan%20Dulce.mp4"
+    }
+    if (string == context.getString(R.string.PanFrances)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Alimentos/Pan%20Frances.mp4"
+    }
+    if (string == context.getString(R.string.salsadetomate)) {
+
+        dataa = "https://storage.googleapis.com/videos-signalingo/Alimentos/Salsa%20de%20tomate.mp4"
+    }
 
 
 

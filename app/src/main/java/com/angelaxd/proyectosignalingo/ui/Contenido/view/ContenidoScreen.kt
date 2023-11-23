@@ -76,81 +76,49 @@ fun condicion(navController: NavHostController, string: String): List<String> {
         )
 
 
-    }else if (string == context.getString(R.string.Adjetivos)){
-        dataa = listOf(
-            context.getString(R.string.Adjetivos),
-            context.getString(R.string.entender),
-            context.getString(R.string.esconder),
-            context.getString(R.string.extrañar),
-            context.getString(R.string.fallar),
-            context.getString(R.string.idear),
-            context.getString(R.string.inspirar),
-            context.getString(R.string.jugar)
-        )
-
-
-    }else if (string == context.getString(R.string.Personas)){
-        dataa = listOf(
-            context.getString(R.string.empezar),
-            context.getString(R.string.entender),
-            context.getString(R.string.esconder),
-            context.getString(R.string.extrañar),
-            context.getString(R.string.fallar),
-            context.getString(R.string.idear),
-            context.getString(R.string.inspirar),
-            context.getString(R.string.jugar)
-        )
-
-
     }else if (string == context.getString(R.string.Alimentos)){
         dataa = listOf(
-            context.getString(R.string.empezar),
-            context.getString(R.string.entender),
-            context.getString(R.string.esconder),
-            context.getString(R.string.extrañar),
-            context.getString(R.string.fallar),
-            context.getString(R.string.idear),
-            context.getString(R.string.inspirar),
-            context.getString(R.string.jugar)
+            context.getString(R.string.pandulce),
+            context.getString(R.string.PanFrances),
+            context.getString(R.string.miel),
+            context.getString(R.string.mantequilla),
+            context.getString(R.string.aceite),
+            context.getString(R.string.Carne),
+            context.getString(R.string.salsadetomate)
+
         )
 
 
     }else if (string == context.getString(R.string.Calendarios)){
         dataa = listOf(
-            context.getString(R.string.empezar),
-            context.getString(R.string.entender),
-            context.getString(R.string.esconder),
-            context.getString(R.string.extrañar),
-            context.getString(R.string.fallar),
-            context.getString(R.string.idear),
-            context.getString(R.string.inspirar),
-            context.getString(R.string.jugar)
+            context.getString(R.string.lunes),
+            context.getString(R.string.martes),
+            context.getString(R.string.miercoles),
+            context.getString(R.string.jueves),
+            context.getString(R.string.viernes),
+            context.getString(R.string.sabado),
+            context.getString(R.string.atrasado),
+            context.getString(R.string.tarde),
+            context.getString(R.string.temprano)
         )
 
 
     }else if (string == context.getString(R.string.Lugares)){
         dataa = listOf(
-            context.getString(R.string.empezar),
-            context.getString(R.string.entender),
-            context.getString(R.string.esconder),
-            context.getString(R.string.extrañar),
-            context.getString(R.string.fallar),
-            context.getString(R.string.idear),
-            context.getString(R.string.inspirar),
-            context.getString(R.string.jugar)
+            context.getString(R.string.centroamerica),
+            context.getString(R.string.belice),
+            context.getString(R.string.guatemala),
+            context.getString(R.string.nicaragua),
+            context.getString(R.string.honduras),
+            context.getString(R.string.costarica),
+            context.getString(R.string.elsalvador),
+            context.getString(R.string.panama)
         )
 
 
     }else if (string == context.getString(R.string.Animales)){
         dataa = listOf(
-            context.getString(R.string.empezar),
-            context.getString(R.string.entender),
-            context.getString(R.string.esconder),
-            context.getString(R.string.extrañar),
-            context.getString(R.string.fallar),
-            context.getString(R.string.idear),
-            context.getString(R.string.inspirar),
-            context.getString(R.string.jugar)
+            context.getString(R.string.empezar)
         )
 
 
