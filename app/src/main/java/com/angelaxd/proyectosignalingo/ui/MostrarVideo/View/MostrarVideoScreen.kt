@@ -140,27 +140,27 @@ fun condicion(navController: NavHostController, string:String): String{
 
         // animales
     }
-    if (string == context.getString(R.string.empezar)) {
+    if (string == context.getString(R.string.abeja)) {
 
         dataa = "https://storage.googleapis.com/videos-signalingo/Animales/abeja.mp4"
     }
-    if (string == context.getString(R.string.empezar)) {
+    if (string == context.getString(R.string.Animales)) {
 
         dataa = "https://storage.googleapis.com/videos-signalingo/Animales/animales.mp4"
     }
-    if (string == context.getString(R.string.empezar)) {
+    if (string == context.getString(R.string.insectos)) {
 
         dataa = "https://storage.googleapis.com/videos-signalingo/Animales/insectos.mp4"
     }
-    if (string == context.getString(R.string.empezar)) {
+    if (string == context.getString(R.string.mosca)) {
 
         dataa = "https://storage.googleapis.com/videos-signalingo/Animales/mosca.mp4"
     }
-    if (string == context.getString(R.string.empezar)) {
+    if (string == context.getString(R.string.mosquito)) {
 
         dataa = "https://storage.googleapis.com/videos-signalingo/Animales/mosquito.mp4"
     }
-    if (string == context.getString(R.string.empezar)) {
+    if (string == context.getString(R.string.zancudo)) {
 
         dataa = "https://storage.googleapis.com/videos-signalingo/Animales/zancudo.mp4"
     }
