@@ -31,6 +31,7 @@ import com.angelaxd.proyectosignalingo.data.GuardadosState
 import com.angelaxd.proyectosignalingo.ui.guardados.viewmodel.getGuardadosViewmodel
 import com.angelaxd.proyectosignalingo.ui.objetos.FunBottomBar
 import com.angelaxd.proyectosignalingo.ui.objetos.FunTopBar
+import com.angelaxd.proyectosignalingo.ui.objetos.ListItemRow
 
 @Composable
 fun GuardadosScreen(navController: NavHostController){
@@ -73,7 +74,7 @@ fun funScaffoldGuardados(navController: NavHostController, context: Context){
                     )
                     {
                         Spacer(modifier = Modifier.height(30.dp))
-                        textos(data)
+                        textos(navController, data)
 
                     }
 
@@ -104,11 +105,12 @@ fun funScaffoldGuardados(navController: NavHostController, context: Context){
 }
 
 @Composable
-fun textos(data: MutableList<Guardado>) {
+fun textos(navController: NavHostController, data: MutableList<Guardado>) {
     //Text(text = data, fontSize = 30.sp)
     LazyColumn {
         items(data.size) { index ->
-            data[index].title?.let { Text(text = it, fontSize = 30.sp) }
+            //data[index].title?.let { Text(text = it, fontSize = 30.sp) }
+            data[index].title?.let { ListItemRow(it,navController)}
         }
     }
 }
